@@ -134,10 +134,11 @@ what's the difference between useEffect() without a second parameter and just ca
 
 ## Resources :moneybag:
 * [React Hooks API](https://reactjs.org/docs/hooks-reference.html)
-React Hooks FAQ
-React Testing Recipes
-Use eslint with react-hooks plugin
-Devtools Profiling
+* [React Hooks FAQ](https://reactjs.org/docs/hooks-faq.html)
+* [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html)
+* [React Testing Recipes](https://reactjs.org/docs/testing-recipes.html)
+* [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+* [React Devtools](https://github.com/facebook/react/tree/master/packages/react-devtools) & [Profiling](https://kentcdodds.com/blog/profile-a-react-app-for-performance)
 
 ## Community & Getting Help :mag:
 * [Dev Edmoonton Slack](https://devedmonton.com)
