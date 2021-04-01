@@ -164,6 +164,8 @@ We can add a few `console.logs` to our `Timer` function to see this in action:
 
 Our timer isn't very interesting yet, as it only advances when you click the button. Let's use an effect to update the timer each second.
 
+Effects are any imperitive, impure, possible effective code, like network requests, timers, and other mutations which impact the environment the application runs in.
+
 The `useEffect()` hook let's you register code to run after React has committed the current render to the screen. This avoids issues with blocking rendering, and allows you to access the DOM and other resources from your effect.
 
 ### Effects On Each Render
@@ -184,7 +186,24 @@ If you re-render the Timer then in the console you can see:
     The Timer is about to be cleaned up
     The Timer is committed
 
-This similar to 
+The function passed into `useEffect()` is called each time we render. This function also returns a clean up function which is called to clean up the effects before the virtual DOM is disposed between renders. The clean up function is optional.
+
+### Effects Only When A Value Changes
+
+Often effects can be expensive (like a network request), or time dependent so you don't want to call them on each render. To avoid this, `useEffect()` accepts a second argument which is a list of dependencies that React uses to determine if the effect needs to run again.
+
+    useEffect(() ==> ..., [dep1, dep2, dep3])
+
+> When comparing dependencies React does a shallow comparison using the `Object.is` algorithm.
+
+If the effect has already run then the effect from the previous render will be cleaned up before this effect runs again.
+
+### Effects On Mount & Unmount
+
+If you only want the effect (and clean up) to run once per component, then you can specify an empty dependency array. This will never change so React will never run your effect or clean up more than once.
+
+We'll use this to set an interval timer in our component.
+
 Only when specific deps change
 handling effects that depend on a callback tied to this closure
 handling effects that don’t complete within a single render
