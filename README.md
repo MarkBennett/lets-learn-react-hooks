@@ -29,6 +29,20 @@ You can get all the source code for this talk from my GitHub at:
 
     https://github.com/MarkBennett/lets-learn-react-hooks
 
+### Following Along
+If you want to follow along, just checkout the source code then run:
+
+    yarn install
+    yarn run dev
+
+Once `vite` starts up you can open up your browser to:
+
+    http://localhost:3000/
+
+Vite supports super fast HMR so you can just edit the files you're working on to see it update in your browser.
+
+
+
 ### What's Not Included
   * NOT using TypeScript (you though, it's great!)
   * NOT describing [Vite](https://vitejs.dev/)
