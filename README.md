@@ -10,7 +10,8 @@ I'm [Mark Bennett](markbennett.ca), a developer and president of [Burmis Studio]
 
 ### Prerequisites
 * HTML, JavaScript
-* import / export
+* ES6 import / export
+* Basic React experience
 
 ### Questions
 I'll pause regularly through this talk to take questions from the moderators, then they'll be time for questions at the end of the talk.
