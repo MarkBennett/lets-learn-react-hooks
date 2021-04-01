@@ -18,7 +18,7 @@ I'll pause regularly through this talk to take questions from the moderators, th
 ### Source Code
 You can get all the source code for this talk from my GitHub at:
 
-    https://github.com
+    https://github.com/MarkBennett/lets-learn-react-hooks
 
 ### What's Not Included
   * NOT using TypeScript (but it's recommended)
