@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 export function Timer({ initialTime }) {
+    const [time, setTime] = useState(initialTime);
+
     return <div>
-        { initialTime } Seconds
+        { time } Seconds
     </div>
 }

@@ -89,7 +89,7 @@ React Hooks allow you to integrate impure behaviours like state, context and sid
 
 > React Hooks aren't meant to be used from class components. Use `this.state` and `React.Component` lifecycle methods instead.
 
-React Hooks are just standard JavaScript functions you call from inside your functional component. They accept arguments when you call them, and return values you can use in your function. By convention their names all start with `use`.
+React Hooks are just standard JavaScript functions you call from inside your functional component. They accept arguments when you call them, and return values you can use in your function. By convention their names all start with `use`. 
 
 There are three hooks you'll use a lot:
 
@@ -118,6 +118,8 @@ To understand how to use hooks we're going to build a simple timer component. As
 
 You can see the final working component in `/src/compoments/FinalTimer.js`. Open the app in your browser and take a moment to play with it.
 
+> You can use the "Render Again" button to trigger a re-render in `App.jsx`. We'll explain how we're using `useState()` to trigger a re-render later.
+
 ## 1. Rendering A Pure Component
 
 1. Open `/src/components/Timer.jsx`
@@ -126,12 +128,26 @@ You can see the final working component in `/src/compoments/FinalTimer.js`. Open
 
 ## 2. Basic state with useState
 
-1. Add state to our component using the `useState` hook
-1. `useState()` takes in an initial state and returns the current state and a function to call to modify it
+We're going to add state to our component using the `useState` hook. Initially, the state is set to `initialTime`.
+
+In `Timer.jsx` add:
+
+    const [time, setTime] = useState(initialTime);
+
+    return <div>
+        { time } Seconds
+    </div>
+
+1. `useState()` takes in an initial state. It returns the current state, and a setter function to modify it.
 1. The setter function accepts either a value, or a function
 1. The function passed to the setter is called to set the new state from the current one. The current state is passed as a parameter
 
     setState((currentState) => newState)
+
+1. When you set the state, it replaces the old state. Values aren't merged like `this.setState()`.
+1. Unlike with components, there isn't one "state" you use for your whole component, so you can call `useState()` many times in one render to create multiple states.
+
+## 3. State State
 
 setter is tied to the closure and changes with each render
 stale setters from past closures won't continue to work
@@ -139,7 +155,8 @@ you can call useState multiple times
 setState doesn't merge like this.setState
 Sharing values between renders with useRef
 comparing with previous state using a ref
-Handling side effects with useEffect
+
+## Handling side effects with useEffect
 Each render
 Mount / unmount
 Only when specific deps change
