@@ -120,7 +120,9 @@ You can see the final working component in `/src/compoments/FinalTimer.js`. Comm
 
 ## 1. Rendering A Pure Component
 
-1. Comment in `<Component>` 
+1. Open `/src/components/Timer.jsx`
+1. Export a function called `Timer` that takes a single prop called `intialTime`
+1. Note that this compoment has no state and always renders the same 
 
 ## Basic state with useState
 setter is tied to the closure and changes with each render
