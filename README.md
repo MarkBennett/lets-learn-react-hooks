@@ -147,9 +147,10 @@ In `Timer.jsx` add:
 1. When you set the state, it replaces the old state. Values aren't merged like `this.setState()`.
 1. Unlike with components, there isn't one "state" you use for your whole component, so you can call `useState()` many times in one render to create multiple states.
 
-## 3. State State
+## 3. Stale State & Properties
 
-setter is tied to the closure and changes with each render
+One of the most important things to understand with 
+When you  is tied to the closure and changes with each render
 stale setters from past closures won't continue to work
 you can call useState multiple times
 setState doesn't merge like this.setState
