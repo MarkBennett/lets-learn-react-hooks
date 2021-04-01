@@ -204,7 +204,24 @@ If you only want the effect (and clean up) to run once per component, then you c
 
 We'll use this to set an interval timer in our component.
 
-Only when specific deps change
+First remove effect we already created, and replace it with one to set an interval that runs every second. We'll also return a clean up function that clears the interval. Since we don't want the interval resetting after each render, we'll include an empty dependency array.
+
+    useEffect(() => {
+        console.log("Setting interval");
+        const timerId = setInterval(() => {
+            console.log("TICK");
+        }, 1000);
+
+        return () => {
+            console.log("Clearing interval");
+            clearInterval(timerId);
+        }
+    }, [])
+
+You should see the "TICK" piling up in the console.
+
+Now change the effect to increment the count.
+
 handling effects that depend on a callback tied to this closure
 handling effects that don’t complete within a single render
 Sharing state between components with useContext / useReducer

@@ -7,12 +7,16 @@ export function Timer({ initialTime }) {
     console.log(`time = ${time}`);
 
     useEffect(() => {
-        console.log(`The Timer is committed`);
+        console.log("Setting interval");
+        const timerId = setInterval(() => {
+            console.log("TICK");
+        }, 1000);
 
         return () => {
-            console.log(`The Timer is about to be cleaned up`)
+            console.log("Clearing interval");
+            clearInterval(timerId);
         }
-    });
+    }, [])
 
     return <div>
         { time } Seconds
