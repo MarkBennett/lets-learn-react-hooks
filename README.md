@@ -222,20 +222,77 @@ You should see the "TICK" piling up in the console.
 
 Now change the effect to increment the count.
 
+    useEffect(() => {
+        console.log("Setting interval");
+        const timerId = setInterval(() => {
+            console.log("TICK");
+            setTime(time + 1);
+        }, 1000);
+
+        return () => {
+            console.log("Clearing interval");
+            clearInterval(timerId);
+        }
+    }, [])
+
+And... the timer only ticks once! What's going on?
+
+## 4. Stale State & Properties
+
+Remember how we set up our effect in the first render of our component, and then used the empty deps array to ensure it wasn't registered again?
+
+Since the deps aren't changing our effect doesn't change either and it's value of `time` remains bound to the value of time when our function closed over it back in the first render. At that point it was "0" so every time we call `setTime()` we're calling `setTime(0 + 1)`. Again, and again and again.
+
+> FUCNTIONS LIKE EFFECTS ALWAYS CLOSE OVER THE VALUES FROM THE RENDER THEY WERE DEFINED IN
+
+So how do we get the current value?
+
+### Use A Setter Function
+
+The value of the setter returned from `useState()` is guarenteed to be stable between renders so if you've closed over it once, even if it was in the first render, you can be sure it won't have changed.
+
+By passing a function to the setter you can always access the current value of that state in your setter. Try replacing the `setTime()` call with this:
+
+    setTime((time) => time + 1);
+
+Great! Our timer is ticking again and working as you'd expect.
+
+BUT...
+
+### Use A Reference
+
+Sometimes you can't set a value based on just it's previous state. For example, what if you need to access properties or state from the current render in an effect defined in a previous render?
+
+The `useRef()` hook creates a mutable object with a `current` property that remains consistent between renders. In other words an effect registered in the first render can use `current` even if it's been updated in the latest render. Typically you set and access a references `current` value from events and event handlers.
+
+Replace our effect code with this:
+
+
+    const timeRef = useRef();
+
+    // This effect updates the current value each render
+    useEffect(() => timeRef.current = time);
+
+    // This effect readers the current time from the reference
+    useEffect(() => {
+        console.log("Setting interval");
+        const timerId = setInterval(() => {
+            console.log("TICK");
+            setTime(timeRef.current + 1);
+        }, 1000);
+
+        return () => {
+            console.log("Clearing interval");
+            clearInterval(timerId);
+        }
+    }, [])
+
+Sharing values between renders with useRef
+comparing with previous state using a ref
+
 handling effects that depend on a callback tied to this closure
 handling effects that don’t complete within a single render
 Sharing state between components with useContext / useReducer
-
-## 3. Stale State & Properties
-
-One of the most confusing things you'll find with 
-One of the most important things to understand with 
-When you  is tied to the closure and changes with each render
-stale setters from past closures won't continue to work
-you can call useState multiple times
-setState doesn't merge like this.setState
-Sharing values between renders with useRef
-comparing with previous state using a ref
 
 ## Creating and sharing code with hooks
 * Keep hooks simple
@@ -244,23 +301,23 @@ comparing with previous state using a ref
 
 ## Rules of hooks
 
-## Testing components with hooks
-When, and when not, to optimise with useCallback and useMemo
-Passing callbacks as deps
-Expensive to render components
-Profile then optimize
-Other hooks
-useImperitiveHandle
-useLayoutEffect
-useDebugValue
-When you need to use a class
-Error boundaries
-Common Questions
-setState from a previous closure doesn’t work
-how does React compare the parameter array
-Object.is
-deps warnings
-what's the difference between useEffect() without a second parameter and just calling code every time your component renders
+## Optimizing
+* Profile then optimize
+* Use `useCallback()` when passing callbacks as a prop to an "expensive" component
+* `useMemo()` to memoize expensive work in a component
+
+## Other hooks
+* `useImperitiveHandle()`
+* `useLayoutEffect()`
+* `useDebugValue()`
+
+## When you need to use a class
+* Error boundaries
+
+## Common Questions :confused:
+* What is my my callback has state from a previous closure?
+* How does React compare the dependency array? (Object.is)
+* deps warnings
 
 ## Resources :moneybag:
 * [React Hooks API](https://reactjs.org/docs/hooks-reference.html)

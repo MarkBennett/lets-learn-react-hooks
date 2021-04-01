@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export function Timer({ initialTime }) {
     console.log("Rendering the Timer");
@@ -6,10 +6,15 @@ export function Timer({ initialTime }) {
 
     console.log(`time = ${time}`);
 
+    const timeRef = useRef();
+
+    useEffect(() => timeRef.current = time);
+
     useEffect(() => {
         console.log("Setting interval");
         const timerId = setInterval(() => {
             console.log("TICK");
+            setTime(timeRef.current + 1);
         }, 1000);
 
         return () => {
