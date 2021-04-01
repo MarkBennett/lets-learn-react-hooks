@@ -1,31 +1,33 @@
-# Summary
+# Let's Learn React Hooks :star_struck:
+
+## Summary
 React functional components are a great way to simplify your React code, however understanding how to add state, effects, and context to your functional components with hooks can be confusing. Let's figure that you!
 
-# Housekeeping
+### Housekeeping
 
-## Who am I?
+### Who am I?
 I'm [Mark Bennett](markbennett.ca), a developer and president of [Burmis Studio](burmis.ca). I've been building React and Ruby on Rails apps for a long time, and love running, cooking and playing with my kids.
 
-## Prerequisites
+### Prerequisites
 * HTML, JavaScript
 * import / export
 
-## Questions
-I'll pause regularly through this talk to take questions, then they'll be time for questions at the end of the talk.
+### Questions
+I'll pause regularly through this talk to take questions from the moderators, then they'll be time for questions at the end of the talk.
 
-## Source Code
+### Source Code
 You can get all the source code for this talk from my GitHub at:
 
     https://github.com
 
-## What's Not Included
+### What's Not Included
   * NOT using TypeScript (but it's recommended)
   * NOT describing [Vite](https://vitejs.dev/)
     * fast reloading and start up by skipping bundling
     * can do another talk if there's interest
   * NOT comparing each hook with class components equivalent
     
-## Terms & Reminders
+### Terms & Reminders
 <dl>
   <dt>JavaScript Closure</dt>
   <dd>When you create a function in JavaScript it closes over ("remembers") the variables and functions that were in scope when it was defined so they can be used by the function when it's called later, even if they're no longer in scope or accessible. Closures in JavaScript are created whenever a function is defined.
