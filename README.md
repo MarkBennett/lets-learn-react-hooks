@@ -41,10 +41,8 @@ Once `vite` starts up you can open up your browser to:
 
 Vite supports super fast HMR so you can just edit the files you're working on to see it update in your browser.
 
-
-
 ### What's Not Included
-  * NOT using TypeScript (you though, it's great!)
+  * NOT using TypeScript (use it though, it's great!)
   * NOT describing [Vite](https://vitejs.dev/)
     * fast reloading and start up by skipping bundling
     * can do another talk if there's interest
@@ -89,6 +87,8 @@ functionWithAClosure(); // "HIDDEN VALUES --> 'Can't access me directly'"
 
 React Hooks allow you to integrate impure behaviours like state, context and side effects into functional components.
 
+> React Hooks aren't meant to be used from class components. Use `this.state` and `React.Component` lifecycle methods instead.
+
 React Hooks are just standard JavaScript functions you call from inside your functional component. They accept arguments when you call them, and return values you can use in your function. By convention their names all start with `use`.
 
 There are three hooks you'll use a lot:
@@ -112,7 +112,19 @@ And five you won't use much but are good to understand:
 
 ## Using Hooks
 
-Basic state with useState
+To understand how to use hooks we're going to build a simple timer component. As we build it up, we'll explore the different hooks and how we might use them.
+
+> This timer is meant to be an example we can use to try out the different React Hooks. We'll do some things just to demonstrate the hooks, but you'd likely implement it differently in a real application.
+
+You can see the final working component in `/src/compoments/Timer.js`. Comment in the component in `App.js` and take a moment to play with it.
+
+Once you're done comment it back out.
+
+## 1. Rendering A Time
+
+1. Delete the current code in `App.js` and 
+
+## Basic state with useState
 setter is tied to the closure and changes with each render
 stale setters from past closures won't continue to work
 you can call useState multiple times
