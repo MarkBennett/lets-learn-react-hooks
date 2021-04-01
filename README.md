@@ -63,9 +63,32 @@ functionWithAClosure(); // "HIDDEN VALUES --> 'Can't access me directly'"
   <dd>A standard JavaScript function which accepts a list of React properties as it's arguments, and returns a string, object that is a subclass of <code>React.Component</code>, or a plain function. Usually, you use <code>JSX</code> to generate the returned component</dd>
 </dl>
 
-What are hooks and how do they work?
-How do they work?
-Rules of hooks
+## What Are Hooks?
+
+React Hooks allow you to integrate impure behaviours like state, context and side effects into functional components.
+
+React Hooks are just standard JavaScript functions you call from inside your functional component. By convention their names all start with `use`. There are three hooks you'll use a lot:
+
+* `useState()`
+* `useEffect()`
+* `useContext()`
+
+Two you'll use a little:
+
+* `useRef()`
+* `useReducer()`
+
+And five you won't use much but are good to understand:
+
+* `useCallback()`
+* `useMemo()`
+* `useImperitiveHandle()`
+* `useLayoutEffect()`
+* `useDebugValue()`
+
+### How do they work?
+
+### Rules of hooks
 Basic state with useState
 setter is tied to the closure and changes with each render
 stale setters from past closures won't continue to work
@@ -102,9 +125,19 @@ how does React compare the parameter array
 Object.is
 deps warnings
 what's the difference between useEffect() without a second parameter and just calling code every time your component renders
-Next Steps
+
+## Resources :moneybag:
+* [React Hooks API](https://reactjs.org/docs/hooks-reference.html)
 React Hooks FAQ
 React Testing Recipes
 Use eslint with react-hooks plugin
 Devtools Profiling
-Thanks & Acknowledgements
+
+## Community & Getting Help
+* [Dev Edmoonton Slack](https://devedmonton.com)
+* [Stack Overflow React Hooks Tag](https://stackoverflow.com/questions/tagged/react-hooks)
+* [React Support Communities](https://reactjs.org/community/support.html)
+
+## Next Steps
+
+## Thanks & Acknowledgements
