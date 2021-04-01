@@ -1,15 +1,16 @@
 # Let's Learn React Hooks :star_struck:
 
-## Summary
+## Summary :books:
+
 React functional components are a great way to simplify your React code, however understanding how to add state, effects, and context to your functional components with hooks can be confusing. Let's figure that you!
 
-### Housekeeping
+## Housekeeping
 
 ### Who am I?
 I'm [Mark Bennett](markbennett.ca), a developer and president of [Burmis Studio](burmis.ca). I've been building React and Ruby on Rails apps for a long time, and love running, cooking and playing with my kids.
 
 ### Prerequisites
-* HTML, JavaScript
+* HTML, JavaScript, JSX
 * ES6 import / export
 * Basic React experience
 
@@ -27,6 +28,7 @@ You can get all the source code for this talk from my GitHub at:
     * fast reloading and start up by skipping bundling
     * can do another talk if there's interest
   * NOT comparing each hook with class components equivalent
+  * NOT going to spend time on CSS or styling
     
 ### Terms & Reminders
 <dl>
@@ -50,13 +52,15 @@ functionWithAClosure(); // "HIDDEN VALUES --> 'Can't access me directly'"
   </dd>
 
   <dt>React Render Lifecycle</dt>
-  <dd>React has two important jobs: rendering the Virtual DOM, and committing the Virtual DOM to the real DOM in the browser. React will render your functional component when it chooses, and then commit the rendered virtual DOM to the real DOM at some point after that. Assume you won't know when or how often your component will render or when the virtual DOM will be committed to the real DOM.</dd>
+  <dd><p>React has two important jobs: <b>rendering</b> the Virtual DOM, and <b>committing</b> the Virtual DOM to the real DOM in the browser. React will render your functional component when it chooses, and then commit the rendered virtual DOM to the real DOM at some point after that.
+  
+  <p>Assume you won't know when or how often your component will render or when the virtual DOM will be committed to the real DOM.</dd>
 
   <dt>Pure Function</dt>
   <dd>A function is pure if always returns identical outputs when given identical inputs, and when it has no side effects (changes to values outside the function)</dd>
 
   <dt>React Functional Components</dt>
-  <dd></dd>
+  <dd>A standard JavaScript function which accepts a list of React properties as it's arguments, and returns a string, object that is a subclass of <code>React.Component</code>, or a plain function. Usually, you use <code>JSX</code> to generate the returned component</dd>
 </dl>
 
 What are hooks and how do they work?
