@@ -32,6 +32,7 @@ You can get all the source code for this talk from my GitHub at:
     * can do another talk if there's interest
   * NOT comparing each hook with class components equivalent
   * NOT going to spend time on CSS or styling
+  * NOT going to test this hooks we write today
     
 ### Terms & Reminders
 <dl>
