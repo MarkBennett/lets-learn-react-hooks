@@ -12,7 +12,11 @@ Throughout this talk we'll expore the React Hooks API by building a simple timer
 ### Who am I?
 I'm [Mark Bennett](markbennett.ca), a developer and president of [Burmis Studio](burmis.ca). I've been building React and Ruby on Rails apps for a long time, and love running, cooking and playing with my kids.
 
-### Prerequisites
+### Who Are You?
+
+This talk is meant for new and experienced React developers looking to better understand the Hooks API, how to use them effectively, and how to avoid some common problems.
+
+### What Should You Know?
 * HTML, JavaScript, JSX
 * ES6 import / export
 * Basic React experience
@@ -26,7 +30,7 @@ You can get all the source code for this talk from my GitHub at:
     https://github.com/MarkBennett/lets-learn-react-hooks
 
 ### What's Not Included
-  * NOT using TypeScript (but it's recommended)
+  * NOT using TypeScript (you though, it's great!)
   * NOT describing [Vite](https://vitejs.dev/)
     * fast reloading and start up by skipping bundling
     * can do another talk if there's interest
