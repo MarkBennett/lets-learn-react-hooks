@@ -147,8 +147,52 @@ In `Timer.jsx` add:
 1. When you set the state, it replaces the old state. Values aren't merged like `this.setState()`.
 1. Unlike with components, there isn't one "state" you use for your whole component, so you can call `useState()` many times in one render to create multiple states.
 
+Let's add a button we can click to increase the count.
+
+    <button onClick={() => setTime(time + 1)}>+1<button>
+
+Notice that each time we call this function to render the component we're creating a new `onClick` handler function. This function closes over the current `time`.
+
+We can add a few `console.logs` to our `Timer` function to see this in action:
+
+    console.log("Rendering the Timer");
+    const [time, setTime] = useState(Number.parseInt(initialTime,10));
+
+    console.log(`time = ${time}`);
+
+## 3. Handling side effects with useEffect
+
+Our timer isn't very interesting yet, as it only advances when you click the button. Let's use an effect to update the timer each second.
+
+The `useEffect()` hook let's you register code to run after React has committed the current render to the screen. This avoids issues with blocking rendering, and allows you to access the DOM and other resources from your effect.
+
+### Effects On Each Render
+
+By default any function passed to the `useEffect()` function is called after your component is rendered and committed. Let's try!
+
+    useEffect(() => {
+        console.log(`The Timer is committed`);
+
+        return () => {
+            console.log(`The Timer is about to be cleaned up`)
+        }
+    });
+
+If you re-render the Timer then in the console you can see:
+
+    The Timer is committed
+    The Timer is about to be cleaned up
+    The Timer is committed
+
+This similar to 
+Only when specific deps change
+handling effects that depend on a callback tied to this closure
+handling effects that don’t complete within a single render
+Sharing state between components with useContext / useReducer
+
 ## 3. Stale State & Properties
 
+One of the most confusing things you'll find with 
 One of the most important things to understand with 
 When you  is tied to the closure and changes with each render
 stale setters from past closures won't continue to work
@@ -157,13 +201,6 @@ setState doesn't merge like this.setState
 Sharing values between renders with useRef
 comparing with previous state using a ref
 
-## Handling side effects with useEffect
-Each render
-Mount / unmount
-Only when specific deps change
-handling effects that depend on a callback tied to this closure
-handling effects that don’t complete within a single render
-Sharing state between components with useContext / useReducer
 ## Creating and sharing code with hooks
 * Keep hooks simple
 * Keep your hooks pure, or
