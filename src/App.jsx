@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css'
-import { Timer } from './components/Timer'
+import { FinalTimer } from './components/FinalTimer'
+import { Timer } from './components/Timer';
 
 function App() {
   return (
@@ -9,7 +10,14 @@ function App() {
         <h1>Let's Learn React Hooks</h1>
       </header>
       <main>
-        <Timer />
+        <div>
+          <h2>Work In Progress</h2>
+          <Timer initialTime="0" />
+        </div>
+        <div>
+          <h2>Final Timer</h2>
+          <FinalTimer />
+        </div>
       </main>
     </div>
   )

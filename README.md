@@ -116,13 +116,11 @@ To understand how to use hooks we're going to build a simple timer component. As
 
 > This timer is meant to be an example we can use to try out the different React Hooks. We'll do some things just to demonstrate the hooks, but you'd likely implement it differently in a real application.
 
-You can see the final working component in `/src/compoments/Timer.js`. Comment in the component in `App.js` and take a moment to play with it.
+You can see the final working component in `/src/compoments/FinalTimer.js`. Comment in the component in `App.js` and take a moment to play with it. You can leave it there if you'd like to compare as we go.
 
-Once you're done comment it back out.
+## 1. Rendering A Pure Component
 
-## 1. Rendering A Time
-
-1. Delete the current code in `App.js` and 
+1. Comment in `<Component>` 
 
 ## Basic state with useState
 setter is tied to the closure and changes with each render

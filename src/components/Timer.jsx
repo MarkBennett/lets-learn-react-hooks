@@ -1,5 +1,7 @@
 import React from "react";
 
-export function Timer() {
-    return <p>I'm a timer</p>
+export function Timer({ initialTime }) {
+    return <div>
+        { initialTime } Seconds
+    </div>
 }
