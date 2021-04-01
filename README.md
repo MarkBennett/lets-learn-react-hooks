@@ -116,7 +116,7 @@ To understand how to use hooks we're going to build a simple timer component. As
 
 > This timer is meant to be an example we can use to try out the different React Hooks. We'll do some things just to demonstrate the hooks, but you'd likely implement it differently in a real application.
 
-You can see the final working component in `/src/compoments/FinalTimer.js`. Comment in the component in `App.js` and take a moment to play with it. You can leave it there if you'd like to compare as we go.
+You can see the final working component in `/src/compoments/FinalTimer.js`. Open the app in your browser and take a moment to play with it.
 
 ## 1. Rendering A Pure Component
 
@@ -124,7 +124,15 @@ You can see the final working component in `/src/compoments/FinalTimer.js`. Comm
 1. Export a function called `Timer` that takes a single prop called `intialTime`
 1. Note that this compoment has no state and always renders the same 
 
-## Basic state with useState
+## 2. Basic state with useState
+
+1. Add state to our component using the `useState` hook
+1. `useState()` takes in an initial state and returns the current state and a function to call to modify it
+1. The setter function accepts either a value, or a function
+1. The function passed to the setter is called to set the new state from the current one. The current state is passed as a parameter
+
+    setState((currentState) => newState)
+
 setter is tied to the closure and changes with each render
 stale setters from past closures won't continue to work
 you can call useState multiple times
