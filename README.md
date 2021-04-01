@@ -2,9 +2,12 @@
 
 ## Summary :books:
 
-React functional components are a great way to simplify your React code, however understanding how to add state, effects, and context to your functional components with hooks can be confusing. Let's figure that you!
+React functional components are a great way to simplify your React code, however understanding how to add state, effects, and context to your functional components with hooks can be confusing.
 
-## Housekeeping
+Throughout this talk we'll expore the React Hooks API by building a simple timer component. We'll use Vite to run the app, VS Code as the editor, Google Chrome for the browser, and the React Devtools Extension to help with debugging.
+
+
+## Housekeeping :house_with_garden:
 
 ### Who am I?
 I'm [Mark Bennett](markbennett.ca), a developer and president of [Burmis Studio](burmis.ca). I've been building React and Ruby on Rails apps for a long time, and love running, cooking and playing with my kids.
@@ -67,7 +70,9 @@ functionWithAClosure(); // "HIDDEN VALUES --> 'Can't access me directly'"
 
 React Hooks allow you to integrate impure behaviours like state, context and side effects into functional components.
 
-React Hooks are just standard JavaScript functions you call from inside your functional component. By convention their names all start with `use`. There are three hooks you'll use a lot:
+React Hooks are just standard JavaScript functions you call from inside your functional component. They accept arguments when you call them, and return values you can use in your function. By convention their names all start with `use`.
+
+There are three hooks you'll use a lot:
 
 * `useState()`
 * `useEffect()`
@@ -86,9 +91,8 @@ And five you won't use much but are good to understand:
 * `useLayoutEffect()`
 * `useDebugValue()`
 
-### How do they work?
+## Using Hooks
 
-### Rules of hooks
 Basic state with useState
 setter is tied to the closure and changes with each render
 stale setters from past closures won't continue to work
@@ -103,12 +107,14 @@ Only when specific deps change
 handling effects that depend on a callback tied to this closure
 handling effects that don’t complete within a single render
 Sharing state between components with useContext / useReducer
-Creating and sharing code with hooks
-Keep hooks simple
-Keep your hooks pure, or
-Make dependencies obvious
-Best practices and anti-patterns
-Testing components with hooks
+## Creating and sharing code with hooks
+* Keep hooks simple
+* Keep your hooks pure, or
+* Make dependencies obvious
+
+## Rules of hooks
+
+## Testing components with hooks
 When, and when not, to optimise with useCallback and useMemo
 Passing callbacks as deps
 Expensive to render components
@@ -133,11 +139,11 @@ React Testing Recipes
 Use eslint with react-hooks plugin
 Devtools Profiling
 
-## Community & Getting Help
+## Community & Getting Help :mag:
 * [Dev Edmoonton Slack](https://devedmonton.com)
 * [Stack Overflow React Hooks Tag](https://stackoverflow.com/questions/tagged/react-hooks)
 * [React Support Communities](https://reactjs.org/community/support.html)
 
-## Next Steps
+## Next Steps :construction_worker:
 
 ## Thanks & Acknowledgements
