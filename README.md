@@ -16,6 +16,8 @@ I'm [Mark Bennett](markbennett.ca), a developer and president of [Burmis Studio]
 
 This talk is meant for new and experienced React developers looking to better understand the Hooks API, how to use them effectively, and how to avoid some common problems.
 
+Find me @mark on the Dev Edmonton Slack, or @MarkBennett on Twitter and GitHub.
+
 ### What Should You Know?
 * HTML, JavaScript, JSX
 * ES6 import / export
