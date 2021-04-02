@@ -287,41 +287,46 @@ Replace our effect code with this:
         }
     }, [])
 
-## 5. Sharing state between components with useContext
+## 5. Rules of hooks
+* Only Call Hooks at the Top Level
+* Only Call Hooks from React Functions
+* [Read more in the docs](https://reactjs.org/docs/hooks-rules.html)
+
+## 6. Sharing state between components with useContext
 * Create a `React.Context`
 * Setup a `Provider` component to wrap anything that needs to use the context
 * call `useContext(context)` to access it
 
-## 6. Managing complex state with a reducer
+## 7. Managing complex state with a reducer
 * `useReducer()` is closely modeled on Redux
 * If you're using `useReducer()` you probably want Redux or a more complex state solution
 
-## Creating and sharing code with hooks
+## 8. Creating and sharing code with hooks
 * Keep hooks simple
 * Keep your hooks pure, or
 * Make dependencies obvious
 
-## Rules of hooks
-
-## Optimizing
+## 9. Optimizing
 * Profile then optimize
+* Use the React Devtools! (links below)
 * Use `useCallback()` when passing callbacks as a prop to an "expensive" component
 * `useMemo()` to memoize expensive work in a component
 
-## Other hooks
+## 11. When you need to use a class?
+* Error boundaries
+
+## 12. Other hooks
 * `useImperitiveHandle()`
 * `useLayoutEffect()`
 * `useDebugValue()`
 
-## When you need to use a class
-* Error boundaries
-
-## Common Questions :confused:
+## 13. Common Questions :confused:
 * What is my my callback has state from a previous closure?
 * How does React compare the dependency array? (Object.is)
 * deps warnings
 
-## Resources :moneybag:
+## 14. Resources :moneybag:
+* [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
 * [React Hooks API](https://reactjs.org/docs/hooks-reference.html)
 * [React Hooks FAQ](https://reactjs.org/docs/hooks-faq.html)
 * [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html)
@@ -329,13 +334,16 @@ Replace our effect code with this:
 * [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 * [React Devtools](https://github.com/facebook/react/tree/master/packages/react-devtools) & [Profiling](https://kentcdodds.com/blog/profile-a-react-app-for-performance)
 
-## Community & Getting Help :mag:
-* [Dev Edmoonton Slack](https://devedmonton.com)
+## 15. Community & Getting Help :mag:
+* [Dev Edmonton Slack](https://devedmonton.com)
 * [Stack Overflow React Hooks Tag](https://stackoverflow.com/questions/tagged/react-hooks)
 * [React Support Communities](https://reactjs.org/community/support.html)
 
-## Next Steps :construction_worker:
+## 16. Next Steps :construction_worker:
 * Try adding a reset button to the component
 * Replace the various places state is modified with a reducer function
 
-## Thanks & Acknowledgements
+## 17. Thanks & Acknowledgements
+* Dan Abramov ([blog](https://overreacted.io/), [twitter](https://mobile.twitter.com/dan_abramov), [github](https://github.com/gaearon))
+* Kent Dodds ([blog](https://kentcdodds.com/), [twitter](https://twitter.com/kentcdodds/), [github](https://github.com/kentcdodds/))
+* React Docs Team :sparkle:
