@@ -22,7 +22,7 @@ function App() {
         </div>
         <div>
           <h2>Final Timer</h2>
-          <FinalTimer />
+          <FinalTimer initialTime="0" />
         </div>
       </main>
     </div>

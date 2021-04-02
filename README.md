@@ -97,13 +97,13 @@ There are three hooks you'll use a lot:
 * `useEffect()`
 * `useContext()`
 
-Two you'll use a little:
+One you'll use a little:
 
 * `useRef()`
+
+And six you won't use much but are good to understand:
+
 * `useReducer()`
-
-And five you won't use much but are good to understand:
-
 * `useCallback()`
 * `useMemo()`
 * `useImperitiveHandle()`
@@ -287,12 +287,14 @@ Replace our effect code with this:
         }
     }, [])
 
-Sharing values between renders with useRef
-comparing with previous state using a ref
+## 5. Sharing state between components with useContext
+* Create a `React.Context`
+* Setup a `Provider` component to wrap anything that needs to use the context
+* call `useContext(context)` to access it
 
-handling effects that depend on a callback tied to this closure
-handling effects that don’t complete within a single render
-Sharing state between components with useContext / useReducer
+## 6. Managing complex state with a reducer
+* `useReducer()` is closely modeled on Redux
+* If you're using `useReducer()` you probably want Redux or a more complex state solution
 
 ## Creating and sharing code with hooks
 * Keep hooks simple
@@ -333,5 +335,7 @@ Sharing state between components with useContext / useReducer
 * [React Support Communities](https://reactjs.org/community/support.html)
 
 ## Next Steps :construction_worker:
+* Try adding a reset button to the component
+* Replace the various places state is modified with a reducer function
 
 ## Thanks & Acknowledgements
