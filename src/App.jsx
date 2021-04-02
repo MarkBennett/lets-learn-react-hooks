@@ -18,7 +18,7 @@ function App() {
         <button onClick={triggerRender}>Render Again</button>
         <div>
           <h2>Work In Progress</h2>
-          <Timer initialTime="0" />
+          <Timer/>
         </div>
         <div>
           <h2>Final Timer</h2>
